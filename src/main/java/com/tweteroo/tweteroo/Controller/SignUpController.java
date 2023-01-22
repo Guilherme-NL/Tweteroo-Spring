@@ -1,6 +1,7 @@
 package com.tweteroo.tweteroo.Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,8 +18,8 @@ public class SignUpController {
     private UserService service;
 
     @PostMapping("/sign-up")
-    public void CreateUser(@RequestBody UserDTO req) {
-        System.out.println(req);
+    public ResponseEntity<String> CreateUser(@RequestBody UserDTO req) {
         service.save(req);
+        return ResponseEntity.ok().body("OK");
     }
 }
