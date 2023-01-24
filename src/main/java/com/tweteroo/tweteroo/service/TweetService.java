@@ -1,6 +1,7 @@
 package com.tweteroo.tweteroo.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import javax.print.attribute.standard.MediaSize.Other;
 
@@ -27,9 +28,8 @@ public class TweetService {
     }
 
     public List<Tweet> findUserTweets(String username) {
-        //@Query("SELECT * FROM tweets", []);
-        return repository.findAll();
-        //repository.find
+        List<Tweet> Tweet = repository.findByUsername(username);
+        return Tweet;
     }
 
     public Page<Tweet> findAll(Pageable pageable) {
