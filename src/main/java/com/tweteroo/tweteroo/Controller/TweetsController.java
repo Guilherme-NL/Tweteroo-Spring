@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.data.web.SpringDataWebProperties.P
 import org.springframework.data.domain.Page;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,6 +20,7 @@ import com.tweteroo.tweteroo.model.Tweet;
 import com.tweteroo.tweteroo.service.TweetService;
 
 @RestController
+@CrossOrigin(origins = "*")
 @RequestMapping("/api/tweets")
 public class TweetsController {
 

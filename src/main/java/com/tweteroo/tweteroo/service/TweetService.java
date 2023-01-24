@@ -33,8 +33,8 @@ public class TweetService {
     }
 
     public Page<Tweet> findAll(Pageable pageable) {
-        int page = Integer.parseInt(pageable.getPageParameter());
-        int size = Integer.parseInt(pageable.getSizeParameter());
+        int page = 1;
+        int size = 5;
         PageRequest pageRequest = PageRequest.of(page, size);
 
         return new PageImpl<>(repository.findAll(), pageRequest, size);

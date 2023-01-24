@@ -2,6 +2,7 @@ package com.tweteroo.tweteroo.Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,6 +12,7 @@ import com.tweteroo.tweteroo.DTO.UserDTO;
 import com.tweteroo.tweteroo.service.UserService;
 
 @RestController
+@CrossOrigin(origins = "*")
 @RequestMapping("/api/auth")
 public class SignUpController {
 
